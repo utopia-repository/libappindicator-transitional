@@ -1,0 +1,41 @@
+Source: libappindicator-transitional
+Section: oldlibs
+Priority: optional
+Homepage: https://github.com/utopia-repository/libappindicator-transitional
+Build-Depends: debhelper-compat (= 12)
+Standards-Version: 4.5.0
+Maintainer: James Lu <james@overdrivenetworks.com>
+Vcs-Git: https://github.com/utopia-repository/libappindicator-transitional
+Vcs-Browser: https://github.com/utopia-repository/libappindicator-transitional
+
+Package: gir1.2-appindicator-0.1
+Depends: ${misc:Depends}, ${gir:Depends}, gir1.2-ayatanaappindicator-0.1
+Architecture: any
+Description: Typelib files for libappindicator1 (transitional)
+ This is a dummy transitional package from gir1.2-appindicator-0.1 to
+ gir1.2-ayatanaappindicator-0.1.
+ It can be safely removed when no other packages depend on it.
+
+Package: gir1.2-appindicator3-0.1
+Depends: ${misc:Depends}, ${gir:Depends}, gir1.2-ayatanaappindicator3-0.1
+Architecture: any
+Description: Typelib files for libappindicator3-1 (transitional)
+ This is a dummy transitional package from gir1.2-appindicator3-0.1 to
+ gir1.2-ayatanaappindicator3-0.1.
+ It can be safely removed when no other packages depend on it.
+
+Package: libappindicator1
+Depends: ${misc:Depends}, libayatana-appindicator1
+Architecture: any
+Description: allow applications to export a menu into the panel (transitional)
+ This is a dummy transitional package from libappindicator1 to
+ libayatana-appindicator1.
+ It can be safely removed when no other packages depend on it.
+
+Package: libappindicator3-1
+Depends: ${misc:Depends}, libayatana-appindicator3-1
+Architecture: any
+Description: allow applications to export a menu into the panel -- GTK3 version (transitional)
+ This is a dummy transitional package from libappindicator3-1 to
+ libayatana-appindicator3-1.
+ It can be safely removed when no other packages depend on it.

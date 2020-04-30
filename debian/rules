@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+#export DH_VERBOSE=1
+include /usr/share/dpkg/architecture.mk
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	mkdir -p debian/libappindicator1/usr/lib/$(DEB_HOST_MULTIARCH)/
+	mkdir -p debian/libappindicator3-1/usr/lib/$(DEB_HOST_MULTIARCH)/
+	mkdir -p debian/gir1.2-appindicator-0.1/usr/lib/$(DEB_HOST_MULTIARCH)/girepository-1.0/
+	mkdir -p debian/gir1.2-appindicator3-0.1/usr/lib/$(DEB_HOST_MULTIARCH)/girepository-1.0/
+	ln -s /usr/lib/$(DEB_HOST_MULTIARCH)/libayatana-appindicator.so.1.0.0 debian/libappindicator1/usr/lib/$(DEB_HOST_MULTIARCH)/libappindicator.so.1.0.0
+	ln -s /usr/lib/$(DEB_HOST_MULTIARCH)/libayatana-appindicator3.so.1.0.0 debian/libappindicator3-1/usr/lib/$(DEB_HOST_MULTIARCH)/libappindicator3.so.1.0.0
+	ln -s /usr/lib/$(DEB_HOST_MULTIARCH)/girepository-1.0/AyatanaAppIndicator-0.1.typelib debian/gir1.2-appindicator-0.1/usr/lib/$(DEB_HOST_MULTIARCH)/girepository-1.0/AppIndicator-0.1.typelib
+	ln -s /usr/lib/$(DEB_HOST_MULTIARCH)/girepository-1.0/AyatanaAppIndicator3-0.1.typelib debian/gir1.2-appindicator3-0.1/usr/lib/$(DEB_HOST_MULTIARCH)/girepository-1.0/AppIndicator3-0.1.typelib
+
+	dh_auto_install
